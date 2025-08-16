@@ -1,13 +1,18 @@
-'use client';
+"use client";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Register GSAP plugin once
-if (typeof window !== "undefined" && gsap && !gsap.core.globals().ScrollTrigger)
+// Register GSAP plugin only once in browser
+if (
+  typeof window !== "undefined" &&
+  gsap &&
+  !gsap.core.globals().ScrollTrigger
+) {
   gsap.registerPlugin(ScrollTrigger);
+}
 
-const Features = [
+const features = [
   {
     icon: (
       <svg className="w-8 h-8 mb-3 text-violet-400" fill="none" stroke="currentColor" strokeWidth={2.1} viewBox="0 0 24 24">
@@ -17,7 +22,7 @@ const Features = [
       </svg>
     ),
     title: "Creation",
-    desc: "Tailored posts that resonate with your audience, boosting engagement and brand loyalty."
+    desc: "Tailored posts that resonate with your audience, boosting engagement and brand loyalty.",
   },
   {
     icon: (
@@ -27,7 +32,7 @@ const Features = [
       </svg>
     ),
     title: "Management",
-    desc: "Seamless management of all your social media accounts, ensuring consistent and effective communication."
+    desc: "Seamless management of all your social media accounts, ensuring consistent and effective communication.",
   },
   {
     icon: (
@@ -37,7 +42,7 @@ const Features = [
       </svg>
     ),
     title: "Advertising",
-    desc: "Strategic ad placements that reach your ideal audience, driving traffic and conversions."
+    desc: "Strategic ad placements that reach your ideal audience, driving traffic and conversions.",
   },
   {
     icon: (
@@ -46,7 +51,7 @@ const Features = [
       </svg>
     ),
     title: "Analytics",
-    desc: "Detailed reports that offer insights into your social media performance, helping you refine your strategy."
+    desc: "Detailed reports that offer insights into your social media performance, helping you refine your strategy.",
   },
   {
     icon: (
@@ -57,7 +62,7 @@ const Features = [
       </svg>
     ),
     title: "Engagement",
-    desc: "Active engagement with your followers, building a strong and supportive community around your brand."
+    desc: "Active engagement with your followers, building a strong and supportive community around your brand.",
   },
   {
     icon: (
@@ -67,7 +72,7 @@ const Features = [
       </svg>
     ),
     title: "Consulting",
-    desc: "Expert advice on how to position your brand for success in the digital landscape."
+    desc: "Expert advice on how to position your brand for success in the digital landscape.",
   },
 ];
 
@@ -78,7 +83,6 @@ const WhyChooseUsSection = () => {
   const btnRef = useRef();
 
   useEffect(() => {
-    // Animate headline, subtitle, cards, button on mount/scroll
     gsap.fromTo(
       headerRef.current,
       { opacity: 0, y: 38 },
@@ -106,16 +110,26 @@ const WhyChooseUsSection = () => {
     gsap.fromTo(
       btnRef.current,
       { opacity: 0, y: 18, scale: 0.96 },
-      { opacity: 1, y: 0, scale: 1, delay: 0.12 * features.length, duration: 0.6, ease: "power2.out" }
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        delay: 0.12 * features.length,
+        duration: 0.6,
+        ease: "power2.out",
+      }
     );
   }, []);
 
   return (
-    <section className="relative w-full min-h-[600px] flex flex-col items-center py-24 px-3 bg-gradient-to-tr from-[#191932] to-[#100828] via-[#120534]">
-      {/* blurred overlay */}
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-2xl z-0 pointer-events-none"></div>
+    <section className="relative w-full min-h-[600px] flex flex-col items-center py-24 px-3 bg-gradient-to-tr from-[#191932] via-[#120534] to-[#100828] overflow-x-hidden">
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-xl z-0 pointer-events-none" />
       <div className="relative z-10 max-w-5xl w-full mx-auto flex flex-col items-center">
-        {/* Header */}
+        {/* Owner/Brand name */}
+        <div className="mb-4 flex flex-col items-center">
+          {/* You can use an <img> avatar above the name if you wish */}
+          <span className="text-xl font-semibold text-violet-300 mb-1">Cris Rayaan</span>
+        </div>
         <div className="mb-8 text-center">
           <span
             ref={headerRef}
@@ -124,8 +138,7 @@ const WhyChooseUsSection = () => {
             Features
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Why Choose Us1<br className="hidden md:block" />
-            for Success?
+            Why Choose Us<br className="hidden md:block" /> for Success?
           </h2>
           <p
             ref={subRef}
@@ -140,10 +153,9 @@ const WhyChooseUsSection = () => {
             <div
               ref={el => (cardsRef.current[i] = el)}
               key={feature.title}
-              className="flex flex-col items-center text-center bg-[#151229]/45 border border-violet-950/50 shadow-xl rounded-2xl px-6 py-9
-                group
-                hover:scale-105 hover:shadow-[0_8px_32px_rgba(140,82,255,.17)]
-                transition-all duration-300 ease-[cubic-bezier(.4,1,.7,1)] backdrop-blur-[2.5px]"
+              className="flex flex-col items-center text-center bg-[#11101d]/80 border border-[#37305a] shadow-xl rounded-2xl px-6 py-9
+                group transition-transform duration-300 ease-[cubic-bezier(.4,1,.7,1)] backdrop-blur-[2.5px]
+                hover:scale-105 hover:shadow-[0_8px_32px_rgba(140,82,255,.19)]"
             >
               <div className="flex items-center justify-center mb-1">
                 {feature.icon}
@@ -169,4 +181,4 @@ const WhyChooseUsSection = () => {
   );
 };
 
-export default Features;
+export default WhyChooseUsSection;

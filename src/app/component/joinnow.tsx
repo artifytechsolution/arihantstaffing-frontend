@@ -1,12 +1,14 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import { useRouter } from "next/navigation";
 
 export default function JoinNow() {
   const bgRef = useRef(null);
   const cardRef = useRef(null);
   const joinButtonRef = useRef(null);
   const bookButtonRef = useRef(null);
+  const router = useRouter()
 
   useEffect(() => {
     // Background looping gradient animation
@@ -112,6 +114,10 @@ export default function JoinNow() {
     };
   }, []);
 
+  const bookAppoiment = ()=>{
+router.push("contact")
+  }
+
   return (
     <div className="relative w-[70vw] max-w-[95vw] h-[400px] mx-auto flex items-center justify-center my-16">
       {/* Animated Background */}
@@ -171,6 +177,7 @@ export default function JoinNow() {
         </p>
         <button
           ref={bookButtonRef}
+          onClick={bookAppoiment}
           className="
             mt-8 px-8 py-3.5 rounded-lg
             bg-blue-600 text-white

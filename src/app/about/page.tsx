@@ -7,6 +7,7 @@ import StaffingAgencyMixedGlass from '../sample1/page';
 import WhyChooseUsSection from '../component/feature';
 import Footer from '../component/Fotter';
 import JoinNow from '../component/joinnow';
+import SimpleBannerSection from '../component/annimatedBannerSection';
 
 const page = () => {
   useEffect(() => {
@@ -20,7 +21,7 @@ const page = () => {
   return (
     <>
     <Header/>
-    <div
+    {/* <div
       className="relative min-h-screen flex flex-col items-center justify-center text-center"
       style={{
         background: 'radial-gradient(circle at 25% 25%, #000108, #000439, #000a83, #010fcc, #0110fc)'
@@ -45,12 +46,18 @@ const page = () => {
       <button className="cta-btn bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg font-semibold rounded-md py-3 px-8 shadow-lg hover:scale-105 transition">
         Build Your Product
       </button>
-    </div>
+    </div> */}
+   <SimpleBannerSection
+  title="Who We Are ??"
+  description="Full-cycle software development—from concept to launch. We craft scalable, modern, and user-friendly applications tailored to your business goals."
+/>
+
    
    <StaffingAgencyMixedGlass/>
    <WhyChooseUsSection />
    <Ownportfolio/>
    <Footer/>
+ 
     </>
   );
 }
