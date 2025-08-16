@@ -55,16 +55,7 @@ const SimpleBannerSection = ({ title, description }) => {
       <p className="desc text-blue-200 mb-8 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
         {description || "We are working on this page. This page is coming soon..."}
       </p>
-       <button className="cta-btn bg-gradient-to-r from-purple-500 to-purple-700 text-white text-base sm:text-lg font-semibold rounded-md py-3 px-6 sm:px-8 shadow-lg hover:scale-105 transition-all transform">
-          Contact Us
-        </button>
-
-      {/* CTA Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4">
-        <button className="cta-btn bg-gradient-to-r from-purple-500 to-purple-700 text-white text-base sm:text-lg font-semibold rounded-md py-3 px-6 sm:px-8 shadow-lg hover:scale-105 transition-all transform">
-          Contact Us
-        </button>
-      </div>
+     
 
       {/* Decorative elements */}
       <div className="absolute top-10 left-10 w-48 h-48 bg-violet-500/5 rounded-full blur-3xl"></div>
