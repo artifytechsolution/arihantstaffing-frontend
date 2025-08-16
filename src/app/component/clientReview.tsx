@@ -216,7 +216,7 @@ const ClientReview = () => {
             <div className="relative z-10 flex flex-col h-full">
               {/* Testimonial Text */}
               <p className="text-blue-200/90 text-sm sm:text-base leading-relaxed mb-6 flex-grow">
-                "{item.text}"
+                {item.text}
               </p>
 
               {/* Author Info */}

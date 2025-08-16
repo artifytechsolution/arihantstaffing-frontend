@@ -297,10 +297,10 @@ const ContactCard = () => {
             📞 Get In Touch
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-            Let's Build Something <span className="text-violet-300 font-extrabold">Amazing Together</span>
+            Let is Build Something <span className="text-violet-300 font-extrabold">Amazing Together</span>
           </h2>
           <p className="text-blue-200/80 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your business? Share your vision with us and let's create innovative solutions.
+            Ready to transform your business? Share your vision with us and let is create innovative solutions.
           </p>
         </div>
 

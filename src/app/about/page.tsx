@@ -6,10 +6,9 @@ import Ownportfolio from '../component/ownportfolio';
 import StaffingAgencyMixedGlass from '../sample1/page';
 import WhyChooseUsSection from '../component/feature';
 import Footer from '../component/Fotter';
-import JoinNow from '../component/joinnow';
 import SimpleBannerSection from '../component/annimatedBannerSection';
 
-const page = () => {
+const Page = () => {
   useEffect(() => {
     gsap.from(".badge-row", { y: -40, opacity: 0, duration: 1, delay: 0.2 });
     gsap.from("h1", { y: 40, opacity: 0, duration: 1, delay: 0.5 });
@@ -62,4 +61,4 @@ const page = () => {
   );
 }
 
-export default page
+export default Page
