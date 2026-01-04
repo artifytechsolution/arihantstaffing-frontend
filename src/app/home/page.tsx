@@ -170,7 +170,7 @@ const HomePage = () => {
               ref={textRef}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-2xl"
             >
-              Empower <span className="text-violet-300 font-extrabold drop-shadow-lg">Innovation</span>.<br />
+              Empower 123 <span className="text-violet-300 font-extrabold drop-shadow-lg">Innovation</span>.<br />
               Build <span className="text-blue-200 font-extrabold drop-shadow-lg">Scalable Software</span>.
             </h1>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-100/90 mb-6 sm:mb-8 max-w-full lg:max-w-xl leading-relaxed">
